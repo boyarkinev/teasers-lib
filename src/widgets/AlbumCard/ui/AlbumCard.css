@@ -1,0 +1,10 @@
+.album-card-description {
+  text-align: left;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.album-card-description_el {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

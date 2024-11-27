@@ -1,0 +1,22 @@
+#root {
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.app-header-nav-link {
+  width: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.app-header-nav-link:hover {
+  color: beige;
+}
+
+.app-el-wth-100 {
+  width: 100%;
+}

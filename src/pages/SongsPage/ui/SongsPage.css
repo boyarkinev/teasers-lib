@@ -1,0 +1,9 @@
+.app-songs-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.app-songs-page-img {
+  min-width: 60px;
+}

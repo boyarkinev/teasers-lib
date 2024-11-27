@@ -1,0 +1,35 @@
+audio {
+  height: 36px;
+  padding: 0;
+  margin: 0;
+}
+
+.song-card-audio-control {
+  width: 100%;
+  margin: 0 5px;
+}
+
+audio::-webkit-media-controls-enclosure {
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+audio::-webkit-media-controls-panel {
+  padding: 0;
+}
+
+.song-card-description-wrapper {
+  display: grid;
+  text-align: left;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.song-card-description-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.song-card-image {
+  aspect-ratio: 1/1;
+}
