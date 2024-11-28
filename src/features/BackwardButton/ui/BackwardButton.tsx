@@ -3,6 +3,7 @@ import './BackwardButton.css';
 import { useLocation, useNavigate } from 'react-router';
 
 import { ArrowLeft } from '@/shared/assets';
+import { PATH } from '@/shared/constants';
 import { Button, Divider, Image, useMantineTheme } from '@mantine/core';
 
 /**
@@ -18,7 +19,7 @@ export const BackwardButton = () => {
 
   const handleClickBackwardBtn = () => {
     navigate(state ? state.prevPath : '/', {
-      state: state.prevPath === '/' ? null : { ...state, prevPath: '/' },
+      state: state.prevPath === PATH ? null : { ...state, prevPath: PATH },
     });
   };
 

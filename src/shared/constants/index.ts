@@ -12,3 +12,5 @@ export const SPLICE_AMOUNT = {
   ALBUMS: 8,
   MOVIES: 4,
 };
+
+export const PATH = process.env.NODE_ENV === 'production' ? '/teasers-lib' : '';

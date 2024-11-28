@@ -1,12 +1,13 @@
 import './AlbumCard.css';
 
 import { FC } from 'react';
+import { useNavigate } from 'react-router';
 
+import { PATH } from '@/shared/constants';
 import { ItemCardProps } from '@/shared/ts';
 import { Card, Flex, Grid, Image, Text, UnstyledButton } from '@mantine/core';
 
 import { albumDescriptionTemplate } from '../lib';
-import { useNavigate } from 'react-router';
 
 /**
  * Component. Карточка альбома исполнителя
@@ -20,7 +21,7 @@ export const AlbumCard: FC<ItemCardProps> = ({ data }) => {
 
   // Путь для перехода при нажатии на карточку
   const routePath =
-    location.pathname === '/albums' ? data.collectionId : `albums/${data.collectionId}`;
+    location.pathname === `${PATH}/albums` ? data.collectionId : `albums/${data.collectionId}`;
 
   // Данные для разметки карточки
   const albumCard = albumDescriptionTemplate(data);
