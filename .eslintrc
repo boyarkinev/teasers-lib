@@ -1,4 +1,5 @@
 {
+  "env": { "browser": true, "es2020": true, "node": true, "jest/globals": true },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -6,7 +7,8 @@
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
+    "plugin:jest/recommerided"
   ],
   "settings": {
     "react": {
@@ -26,7 +28,7 @@
       }
     }
   },
-  "plugins": ["react", "react-hooks"],
+  "plugins": ["react", "react-hooks", "react-refresh", "jest"],
   "rules": {
     "no-console": ["error"],
     "no-unused-vars": [
@@ -40,6 +42,7 @@
     ],
     "react-hooks/rules-of-hooks": "off",
     "react-hooks/exhaustive-deps": "off",
-    "react/react-in-jsx-scope": "on"
+    "react/react-in-jsx-scope": "on",
+    "jest/no-focused-tests": "off"
   }
 }

@@ -20,10 +20,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": ["node"],
+    "types": ["node", "jest"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
   },
-  "include": ["src"]
+  "include": ["src", "./src/**/*.ts"],
 }
