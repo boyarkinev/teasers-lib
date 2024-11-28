@@ -19,7 +19,7 @@ export const BackwardButton = () => {
 
   const handleClickBackwardBtn = () => {
     navigate(state ? state.prevPath : '/', {
-      state: state.prevPath === PATH ? null : { ...state, prevPath: PATH },
+      state: state.prevPath === `${PATH}/albums` ? { ...state, prevPath: PATH } : null,
     });
   };
 
