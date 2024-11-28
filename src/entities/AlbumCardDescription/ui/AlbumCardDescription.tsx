@@ -7,13 +7,13 @@ const widthStyle = { width: '100%' };
 
 /**
  * Component. Описание для обложки альбома исполнителя
- * @name AlbumPageAlbumDescription
+ * @name AlbumCardDescription
  * @layer entities
  * @param ItemCardProps
  * @prop {ItemMusicData} album - данные альбома исполнителя
  * @returns JSX
  */
-export const AlbumPageAlbumDescription: FC<ItemCardProps> = ({ data }) => {
+export const AlbumCardDescription: FC<ItemCardProps> = ({ data }) => {
   return (
     <Flex direction='column' style={widthStyle}>
       <Flex justify='space-between'>

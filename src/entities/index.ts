@@ -1,2 +1,2 @@
-export { SongsPageSongDescription } from './SongsPageSongDescription/ui/SongsPageSongDescription';
-export { AlbumPageAlbumDescription } from './AlbumPageAlbumDescription/ui/AlbumPageAlbumDescription';
+export { SongCardDescription } from './SongCardDescription/ui/SongCardDescription';
+export { AlbumCardDescription } from './AlbumCardDescription/ui/AlbumCardDescription';

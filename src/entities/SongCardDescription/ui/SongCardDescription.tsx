@@ -1,4 +1,4 @@
-import './SongsPageSongDescription.css';
+import './SongCardDescription.css';
 
 import { releaseDate, trackTime } from '@/shared/lib';
 import { ItemCardProps } from '@/shared/ts';
@@ -7,13 +7,13 @@ import { FC } from 'react';
 
 /**
  * Component. Описание для песни исполнителя
- * @name SongsPageSongDescription
+ * @name SongCardDescription
  * @layer entities
  * @param ItemCardProps
  * @prop {ItemMusicData} song - данные альбома исполнителя
  * @returns JSX
  */
-export const SongsPageSongDescription: FC<ItemCardProps> = ({ data }) => {
+export const SongCardDescription: FC<ItemCardProps> = ({ data }) => {
   return (
     <Flex justify='space-between'>
       <div className='song-card-description-wrapper'>

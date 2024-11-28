@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 
-import { AlbumPageAlbumDescription } from '@/entities';
+import { AlbumCardDescription } from '@/entities';
 import { INITIAL_QUERY_PARAMS } from '@/shared/constants';
 import { useMusicQuery } from '@/shared/lib';
 import { AlbumSongsList } from '@/widgets';
@@ -36,7 +36,7 @@ export const AlbumPage = () => {
         <Card key={album.collectionId} padding={18} radius='lg' shadow='md' withBorder>
           <Flex justify='space-between' gap={20}>
             <Image radius='md' src={album.artworkUrl100} style={{ minWidth: 150 }} />
-            <AlbumPageAlbumDescription data={album} />
+            <AlbumCardDescription data={album} />
           </Flex>
         </Card>
       ))}

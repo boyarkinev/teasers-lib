@@ -2,7 +2,7 @@ import './SongsPage.css';
 
 import { useEffect } from 'react';
 
-import { SongsPageSongDescription } from '@/entities';
+import { SongCardDescription } from '@/entities';
 import { INITIAL_QUERY_PARAMS } from '@/shared/constants';
 import { useAutoPlayNext, useMusicQuery, usePause } from '@/shared/lib';
 import { Card, Container, Flex, Image, Loader, useMantineTheme } from '@mantine/core';
@@ -40,7 +40,7 @@ export const SongsPage = () => {
           <Flex justify='space-between' gap={10}>
             <Image className='app-songs-page-img' radius='md' src={song.artworkUrl100} />
             <Flex direction='column' className='app-el-wth-100'>
-              <SongsPageSongDescription data={song} />
+              <SongCardDescription data={song} />
               <audio controls src={song.previewUrl} />
             </Flex>
           </Flex>
