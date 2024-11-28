@@ -1,4 +1,4 @@
-# [Teasers Lib]()
+# [Teasers Lib](https://boyarkinev.github.io/teaser-lib/)
 
 Приложение для поиска превью музыкальных треков в медиа-библиотеке iTunes.
 
