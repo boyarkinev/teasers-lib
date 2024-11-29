@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { SongCardDescription } from '@/entities';
 import { PlayControl } from '@/features';
 import { INITIAL_QUERY_PARAMS } from '@/shared/constants';
-import { useAutoPlayNext, useMusicQuery, usePause } from '@/shared/lib';
+import { useMusicQuery } from '@/shared/lib';
 import { Card, Container, Flex, Image, Loader, useMantineTheme } from '@mantine/core';
 
 /**
@@ -17,9 +17,6 @@ import { Card, Container, Flex, Image, Loader, useMantineTheme } from '@mantine/
 export const SongsPage = () => {
   const { colors } = useMantineTheme();
   const term = sessionStorage.getItem('term');
-
-  usePause('audio');
-  useAutoPlayNext('audio');
 
   const { data, isFetching, refetch } = useMusicQuery({
     ...INITIAL_QUERY_PARAMS,
