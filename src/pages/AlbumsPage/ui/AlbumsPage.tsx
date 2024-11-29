@@ -32,7 +32,7 @@ export const AlbumsPage = () => {
 
   return (
     <Container px={0} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-      <Grid>{sortedData?.map((album) => <AlbumCard data={album} key={album.collectionId} />)}</Grid>
+      <Grid>{sortedData?.map((album) => <AlbumCard {...album} key={album.collectionId} />)}</Grid>
     </Container>
   );
 };

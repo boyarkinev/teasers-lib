@@ -8,7 +8,7 @@ export type RequestParams = {
   limit: number;
 };
 // Типизация данных песен
-export type ItemMusicData = {
+export type ItemMediaData = {
   wrapperType: string;
   kind: string;
   artistId: number;
@@ -46,11 +46,11 @@ export type ItemMusicData = {
 // Типизация ответа с сервера
 export type MediaResponse = {
   resultCount: number;
-  results: ItemMusicData[];
+  results: ItemMediaData[];
 };
 // Типизация данных для главной страницы
 export type MediaData = {
-  [key: string]: ItemMusicData[];
+  [key: string]: ItemMediaData[];
 };
 // Типизация props для компонента поисковой строки
 export type SearchInputProps = {
@@ -60,8 +60,6 @@ export type SearchInputProps = {
 export type MediaDataProps = { mediaData: MediaData };
 // Типизация props с данными для компонентов-иконок
 export type IconProps = { size: number; fill?: string; stroke?: string };
-// Типизация props с данными для компонентов-карточек
-export type ItemCardProps = { data: ItemMusicData };
 // Типизация компонентов главной страницы
 export type MediasTemplate = {
   handler: () => void;

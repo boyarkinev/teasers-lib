@@ -36,7 +36,7 @@ export const AlbumPage = () => {
         <Card key={album.collectionId} padding={18} radius='lg' shadow='md' withBorder>
           <Flex justify='space-between' gap={20}>
             <Image radius='md' src={album.artworkUrl100} style={{ minWidth: 150 }} />
-            <AlbumCardDescription data={album} />
+            <AlbumCardDescription {...album} />
           </Flex>
         </Card>
       ))}

@@ -1,7 +1,7 @@
 import { releaseDate } from '@/shared/lib';
-import { ItemMusicData } from '@/shared/ts';
+import { ItemMediaData } from '@/shared/ts';
 
-export const albumTemplate = (album: ItemMusicData) => {
+export const albumTemplate = (album: ItemMediaData) => {
   return [
     { label: 'Альбом: ', value: album.collectionName },
     { label: 'Дата релиза: ', value: releaseDate.format(new Date(album.releaseDate)) },

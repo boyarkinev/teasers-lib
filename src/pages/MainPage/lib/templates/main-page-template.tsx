@@ -23,7 +23,7 @@ export const mainPageTemplate = (mediaData: MediaData): MediasTemplate[] => {
       id: 'songs',
       isRouteShow: !!mediaData?.songs?.length && !(mediaData?.songs?.length < SPLICE_AMOUNT.SONGS),
       label: 'песни',
-      layout: mediaData?.songs?.map((song) => <SongCard data={song} key={song.trackId} />),
+      layout: mediaData?.songs?.map((song) => <SongCard {...song} key={song.trackId} />),
     },
     {
       handler: () => navigate('albums', navigateOptions),
@@ -32,9 +32,7 @@ export const mainPageTemplate = (mediaData: MediaData): MediasTemplate[] => {
       isRouteShow:
         !!mediaData?.albums?.length && !(mediaData?.albums?.length < SPLICE_AMOUNT.ALBUMS),
       label: 'альбомы',
-      layout: mediaData?.albums?.map((album) => (
-        <AlbumCard data={album} key={album.collectionId} />
-      )),
+      layout: mediaData?.albums?.map((album) => <AlbumCard {...album} key={album.collectionId} />),
     },
     {
       handler: () => navigate('movies', navigateOptions),
@@ -43,7 +41,7 @@ export const mainPageTemplate = (mediaData: MediaData): MediasTemplate[] => {
       isRouteShow:
         !!mediaData?.movies?.length && !(mediaData?.movies?.length < SPLICE_AMOUNT.MOVIES),
       label: 'видео',
-      layout: mediaData?.movies?.map((movie) => <MovieCard data={movie} key={movie.trackId} />),
+      layout: mediaData?.movies?.map((movie) => <MovieCard {...movie} key={movie.trackId} />),
     },
   ];
 };

@@ -41,7 +41,7 @@ export const SongsPage = () => {
           <Flex justify='space-between' gap={10}>
             <Image className='app-songs-page-img' radius='md' src={song.artworkUrl100} />
             <Flex direction='column' className='app-el-wth-100'>
-              <SongCardDescription data={song} />
+              <SongCardDescription {...song} />
               <PlayControl mediaTag='audio' src={song.previewUrl} />
             </Flex>
           </Flex>

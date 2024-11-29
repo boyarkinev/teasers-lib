@@ -1,15 +1,15 @@
 import { SPLICE_AMOUNT } from '@/shared/constants';
 import { collator } from '@/shared/lib';
-import { MediaData, ItemMusicData } from '@/shared/ts';
+import { MediaData, ItemMediaData } from '@/shared/ts';
 
 /**
  * Helper. Разделяет данные на песни, альбомы и видео
  * @name separateData
  * @layer features
- * @param {ItemMusicData[]} data - запрошенные данные
+ * @param {ItemMediaData[]} data - запрошенные данные
  * @returns MediaData
  */
-export const separateData = (data: ItemMusicData[]): MediaData => {
+export const separateData = (data: ItemMediaData[]): MediaData => {
   const songs =
     data
       ?.filter((song) => song.wrapperType === 'track' && song.kind === 'song') // забирает песни

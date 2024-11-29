@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { useNavigate } from 'react-router';
 
 import { PATH } from '@/shared/constants';
-import { ItemCardProps } from '@/shared/ts';
+import { ItemMediaData } from '@/shared/ts';
 import { Card, Flex, Grid, Image, Text, UnstyledButton } from '@mantine/core';
 
 import { albumDescriptionTemplate } from '../lib';
@@ -12,19 +12,19 @@ import { albumDescriptionTemplate } from '../lib';
 /**
  * Component. Карточка альбома исполнителя
  * @name AlbumCard
- * @param ItemCardProps
- * @prop {ItemMusicData} data - данные альбома
+ * @layer widgets
+ * @param ItemMediaData
  * @returns JSX
  */
-export const AlbumCard: FC<ItemCardProps> = ({ data }) => {
+export const AlbumCard: FC<ItemMediaData> = (props) => {
   const navigate = useNavigate();
 
   // Путь для перехода при нажатии на карточку
   const routePath =
-    location.pathname === `${PATH}/albums` ? data.collectionId : `albums/${data.collectionId}`;
+    location.pathname === `${PATH}/albums` ? props.collectionId : `albums/${props.collectionId}`;
 
   // Данные для разметки карточки
-  const albumCard = albumDescriptionTemplate(data);
+  const albumCard = albumDescriptionTemplate(props);
 
   return (
     <Grid.Col span={3}>
@@ -33,9 +33,9 @@ export const AlbumCard: FC<ItemCardProps> = ({ data }) => {
           onClick={() =>
             navigate(`${routePath}`, {
               state: {
-                artistName: data.artistName,
-                collectionName: data.collectionName,
-                collectionId: data.collectionId,
+                artistName: props.artistName,
+                collectionName: props.collectionName,
+                collectionId: props.collectionId,
                 prevPath: location.pathname,
               },
             })
@@ -43,10 +43,10 @@ export const AlbumCard: FC<ItemCardProps> = ({ data }) => {
           <Grid>
             <Grid.Col>
               <Image
-                alt={data.artistName}
+                alt={props.artistName}
                 object-fit='object-fit'
                 radius='md'
-                src={data.artworkUrl100}
+                src={props.artworkUrl100}
               />
             </Grid.Col>
             <Grid.Col>

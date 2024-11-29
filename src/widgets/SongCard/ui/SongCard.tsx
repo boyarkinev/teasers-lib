@@ -3,7 +3,7 @@ import './SongCard.css';
 import { FC } from 'react';
 
 import { PlayControl } from '@/features';
-import { ItemCardProps } from '@/shared/ts';
+import { ItemMediaData } from '@/shared/ts';
 import { Card, Flex, Grid, Image, Text } from '@mantine/core';
 
 import { songDescriptionTemplate } from '../lib';
@@ -11,12 +11,12 @@ import { songDescriptionTemplate } from '../lib';
 /**
  * Component. Карточка альбома исполнителя
  * @name SongCard
- * @param ItemCardProps
- * @prop {ItemMusicData} data - данные песни
+ * @layer widgets
+ * @param ItemMediaData
  * @returns JSX
  */
-export const SongCard: FC<ItemCardProps> = ({ data }) => {
-  const cardDescription = songDescriptionTemplate(data);
+export const SongCard: FC<ItemMediaData> = (props) => {
+  const cardDescription = songDescriptionTemplate(props);
 
   return (
     <Grid.Col span={4}>
@@ -24,10 +24,10 @@ export const SongCard: FC<ItemCardProps> = ({ data }) => {
         <Grid align='center' justify='center'>
           <Grid.Col span={3}>
             <Image
-              alt={data.artistName}
+              alt={props.artistName}
               className='song-card-image'
               radius='md'
-              src={data.artworkUrl100}
+              src={props.artworkUrl100}
             />
           </Grid.Col>
           <Grid.Col span={9}>
@@ -41,7 +41,7 @@ export const SongCard: FC<ItemCardProps> = ({ data }) => {
               ))}
             </Flex>
           </Grid.Col>
-          <PlayControl mediaTag='audio' src={data.previewUrl} />
+          <PlayControl mediaTag='audio' src={props.previewUrl} />
         </Grid>
       </Card>
     </Grid.Col>

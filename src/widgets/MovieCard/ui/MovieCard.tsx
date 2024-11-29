@@ -2,32 +2,32 @@ import './MovieCard.css';
 
 import { FC } from 'react';
 
-import { ItemCardProps } from '@/shared/ts';
+import { ItemMediaData } from '@/shared/ts';
 import { Avatar, Card, Flex, Grid, Space, Text } from '@mantine/core';
 import { PlayControl } from '@/features';
 
 /**
  * Component. Карточка альбома исполнителя
  * @name MovieCard
- * @param ItemCardProps
- * @prop {ItemMusicData} data - данные видео
+ * @layer widgets
+ * @param ItemMediaData
  * @returns JSX
  */
-export const MovieCard: FC<ItemCardProps> = ({ data }) => {
+export const MovieCard: FC<ItemMediaData> = (props) => {
   return (
     <Grid.Col span={6}>
       <Card className='movie-card-wrapper' padding={0} radius='lg' shadow='lg' withBorder>
-        <PlayControl mediaTag='video' src={data.previewUrl} />
+        <PlayControl mediaTag='video' src={props.previewUrl} />
         <Space h={5} />
         <Flex align='center' className='movie-card-description-wrapper'>
-          <Avatar src={data.artworkUrl100} alt={data.artistName} />
+          <Avatar src={props.artworkUrl100} alt={props.artistName} />
           <Space w={10} />
           <Flex className='movie-card-description' direction='column' align='flex-start'>
             <Text c='gray.0' fw='bold' size='sm'>
-              {data.artistName}
+              {props.artistName}
             </Text>
             <Text c='gray.0' lineClamp={1} size='sm'>
-              {data.trackName}
+              {props.trackName}
             </Text>
           </Flex>
         </Flex>
