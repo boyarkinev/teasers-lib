@@ -2,10 +2,9 @@ import './MovieCard.css';
 
 import { FC } from 'react';
 
-import { MovieSVG } from '@/shared/assets';
 import { ItemCardProps } from '@/shared/ts';
 import { Avatar, Card, Flex, Grid, Space, Text } from '@mantine/core';
-import { useAutoPlayNext, usePause } from '@/shared/lib';
+import { PlayControl } from '@/features';
 
 /**
  * Component. Карточка альбома исполнителя
@@ -15,13 +14,10 @@ import { useAutoPlayNext, usePause } from '@/shared/lib';
  * @returns JSX
  */
 export const MovieCard: FC<ItemCardProps> = ({ data }) => {
-  usePause('video');
-  useAutoPlayNext('video');
-
   return (
     <Grid.Col span={6}>
       <Card className='movie-card-wrapper' padding={0} radius='lg' shadow='lg' withBorder>
-        <video className='movie-card-video' controls poster={MovieSVG} src={data.previewUrl} />
+        <PlayControl mediaTag='video' src={data.previewUrl} />
         <Space h={5} />
         <Flex align='center' className='movie-card-description-wrapper'>
           <Avatar src={data.artworkUrl100} alt={data.artistName} />

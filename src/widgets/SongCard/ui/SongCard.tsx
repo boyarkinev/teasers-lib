@@ -2,11 +2,11 @@ import './SongCard.css';
 
 import { FC } from 'react';
 
+import { PlayControl } from '@/features';
 import { ItemCardProps } from '@/shared/ts';
 import { Card, Flex, Grid, Image, Text } from '@mantine/core';
 
 import { songDescriptionTemplate } from '../lib';
-import { useAutoPlayNext, usePause } from '@/shared/lib';
 
 /**
  * Component. Карточка альбома исполнителя
@@ -16,9 +16,6 @@ import { useAutoPlayNext, usePause } from '@/shared/lib';
  * @returns JSX
  */
 export const SongCard: FC<ItemCardProps> = ({ data }) => {
-  usePause('audio');
-  useAutoPlayNext('audio');
-
   const cardDescription = songDescriptionTemplate(data);
 
   return (
@@ -44,7 +41,7 @@ export const SongCard: FC<ItemCardProps> = ({ data }) => {
               ))}
             </Flex>
           </Grid.Col>
-          <audio className='song-card-audio-control' controls src={data.previewUrl} />
+          <PlayControl mediaTag='audio' src={data.previewUrl} />
         </Grid>
       </Card>
     </Grid.Col>

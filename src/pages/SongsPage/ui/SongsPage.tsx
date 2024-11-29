@@ -3,6 +3,7 @@ import './SongsPage.css';
 import { useEffect } from 'react';
 
 import { SongCardDescription } from '@/entities';
+import { PlayControl } from '@/features';
 import { INITIAL_QUERY_PARAMS } from '@/shared/constants';
 import { useAutoPlayNext, useMusicQuery, usePause } from '@/shared/lib';
 import { Card, Container, Flex, Image, Loader, useMantineTheme } from '@mantine/core';
@@ -41,7 +42,7 @@ export const SongsPage = () => {
             <Image className='app-songs-page-img' radius='md' src={song.artworkUrl100} />
             <Flex direction='column' className='app-el-wth-100'>
               <SongCardDescription data={song} />
-              <audio controls src={song.previewUrl} />
+              <PlayControl mediaTag='audio' src={song.previewUrl} />
             </Flex>
           </Flex>
         </Card>

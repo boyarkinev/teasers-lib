@@ -1,0 +1,9 @@
+.app-audio-control {
+  width: 100%;
+  margin: 0 5px;
+}
+
+.app-video-control {
+  max-width: 440px;
+  aspect-ratio: 16/9;
+}

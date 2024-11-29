@@ -2,11 +2,6 @@
   background-color: black;
 }
 
-.movie-card-video {
-  max-width: 440px;
-  aspect-ratio: 16/9;
-}
-
 .movie-card-description-wrapper {
   padding: 0 10px 10px;
 }

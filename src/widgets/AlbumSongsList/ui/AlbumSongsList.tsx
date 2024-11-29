@@ -1,9 +1,11 @@
 import './AlbumSongsList.css';
 
-import { INITIAL_QUERY_PARAMS } from '@/shared/constants';
-import { useAutoPlayNext, useMusicQuery, usePause } from '@/shared/lib';
-import { Card, Flex, Loader, Text, useMantineTheme } from '@mantine/core';
 import { FC, useEffect } from 'react';
+
+import { PlayControl } from '@/features';
+import { INITIAL_QUERY_PARAMS } from '@/shared/constants';
+import { useMusicQuery } from '@/shared/lib';
+import { Card, Flex, Loader, Text, useMantineTheme } from '@mantine/core';
 
 type ItemAlbumSongsProps = {
   artistName: string;
@@ -21,9 +23,6 @@ type ItemAlbumSongsProps = {
  */
 export const AlbumSongsList: FC<ItemAlbumSongsProps> = (props) => {
   const { colors } = useMantineTheme();
-
-  usePause('audio');
-  useAutoPlayNext('audio');
 
   const albumTracks = useMusicQuery({
     ...INITIAL_QUERY_PARAMS,
@@ -56,7 +55,7 @@ export const AlbumSongsList: FC<ItemAlbumSongsProps> = (props) => {
                 {song.trackNumber}. {song.trackName}
               </Text>
             </div>
-            <audio controls src={song.previewUrl} />
+            <PlayControl mediaTag='audio' src={song.previewUrl} />
           </Flex>
         </Flex>
       </Card>
